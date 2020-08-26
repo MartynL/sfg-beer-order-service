@@ -5,18 +5,18 @@ import java.util.Set;
 import java.util.UUID;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
+@Entity
 @NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode(callSuper=false)
 public class Customer extends BaseEntity {
 
 	private String customerName;
