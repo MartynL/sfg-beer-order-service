@@ -22,7 +22,7 @@ import com.mlatta.beerorder.web.model.BeerOrderPagedList;
 @RequestMapping("/api/v1/customers/{customerId}")
 public class BeerOrderController {
 
-	private static final Integer DEFAULT_PAGE_SIZE = 0;
+	private static final Integer DEFAULT_PAGE_SIZE = 1;
 	private static final Integer DEFAULT_PAGE_NUMBER = 0;
 
 	private final BeerOrderService beerOrderService;

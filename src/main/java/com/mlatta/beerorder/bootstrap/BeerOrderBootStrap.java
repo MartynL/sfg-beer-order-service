@@ -9,7 +9,9 @@ import com.mlatta.beerorder.domain.Customer;
 import com.mlatta.beerorder.repositories.CustomerRepository;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Component
 @RequiredArgsConstructor
 public class BeerOrderBootStrap implements CommandLineRunner {
@@ -28,11 +30,13 @@ public class BeerOrderBootStrap implements CommandLineRunner {
 
 	private void loadCustomerData() {
 		if(customerRepository.count() == 0) {
-			customerRepository.save(
+			Customer savedCustomer = customerRepository.save(
 				Customer.builder()
 					.customerName(TASTING_ROOM)
 					.apiKey(UUID.randomUUID())
 					.build());
+			
+			log.warn("Tasting room customer is: "+ savedCustomer.getId().toString());
 		}
 	}
 
